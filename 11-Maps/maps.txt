@@ -1,0 +1,22 @@
+MAPS:
+
+Map é uma estrutura baseada no conceito de chave e valor, onde todas as
+chaves tem um tipo e todos os valores também tem um tipo. Os valores
+são associados a uma chave.
+
+Para mim, é como se fosse um array misturado com uma struct, onde a
+estrutura lembra uma struct e as chaves, os índices de um array.
+
+Obs.: é possível ter maps de quaisquer estrutura de dados, inclusive dos
+próprios maps, por isso, tem que ter cuidado.
+
+
+DECLARANDO MAPS:
+
+// Todas as chaves tem seu tipo e todos os valores tem seu tipo
+nomeMap := make(map[tipoChave]tipoValor)
+
+nomeMap := map[tipoChave]tipoValor{}
+
+// Não é possível fazer assim porque o mapa é tido como nulo
+var nomeMap map[tipoChave]tipoValor

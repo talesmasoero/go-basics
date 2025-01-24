@@ -1,0 +1,54 @@
+CHANNELS:
+
+Channels são mecanismos que permitem a comunicação e sincronização entre
+**goroutines**, garantindo uma troca de dados segura. Eles funcionam como 
+canais/tubos de dados implementados por fila (FIFO: First In, First Out).
+
+Os channels podem enviar e receber qualquer tipo de dado, incluindo os
+tipos personalizados (structs, por exemplo).
+
+O jeito "simples" de inicializar um channel é **nomeChan := make(chan tipoDado)**,
+funcionando como uma linha de comunicação direta entre goroutines. Assim, cada
+valor enviado para o channel trava o código até que o valor seja retirado.
+
+Obs.: Utilizando essa inicialização, um canal só "guarda" um (1) valor
+momentaneamente, até que seja recebido.
+
+Channels também podem armazenar N valores, basta determinar sua capacidade
+na inicialização (como nos slices). Basta adicionar um inteiro após o tipo
+do canal, assim: **nomeChan := make(chan tipoDado, cap)**
+
+Quando o programa recebe dados de um channel, ele é impedido de continuar
+até que o channel tenha o dado disponível para enviar (Wait).
+
+Obs.: É possível passar canais como parâmetros (ou retornar), onde podemos
+definir a função de cada canal, sendo leitura (<-chan) e escrita (chan<-).
+// <-chan => canal de, apenas, leitura de dados (recebe dados do canal)
+// chan<- => canal de, apenas, escrita de dados (envia dados para o canal)
+
+
+INICIALIZANDO UM CHANNEL:
+
+nomeChan := make(chan tipoDado)
+
+
+ENVIO E RECEBIMENTO DE DADOS/VALORES:
+
+// nomeChan recebe valor
+nomeChan <- valor => Envia dados para um channel;
+
+// nomeVar recebe o primeiro valor que está no nomeChan
+nomeVar := <-nomeChan => Recebe dados de um channel;
+
+// aberto é um booleano que indica se o canal está aberto ou fechado
+nomeVar, aberto := <-nomeChan
+
+Obs.: Utilizando um for-range, não é preciso verificar se o channel está
+aberto, porque ele já faz essa verificação.
+
+
+ERROS:
+
+PANIC: Ocorre caso tentemos enviar dados para um canal fechado.
+
+DEADLOCK:

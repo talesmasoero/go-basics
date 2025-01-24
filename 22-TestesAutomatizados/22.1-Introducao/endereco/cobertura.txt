@@ -1,0 +1,7 @@
+mode: set
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:7.45,14.36 5 1
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:14.36,15.40 1 1
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:15.40,17.4 1 1
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:20.2,20.29 1 1
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:20.29,22.3 1 1
+basics/22-TestesAutomatizados/22.1-Introducao/endereco/endereco.go:23.2,23.28 1 1

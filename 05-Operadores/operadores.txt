@@ -1,0 +1,12 @@
+OPERADORES:
+
+A maioria dos operadores foram testados no programa.
+
+Aritméticos: + - * / %
+Atribuição: = :=
+Relacionais: == != > < >= <=
+Lógicos: && || !
+Unários: ++ -- += -= *= /= %=
+
+Obs.: Go não tem operador ternário (nomeVar := bool ? caseTrue : caseFalse),
+nós usamos o if{}else{}.

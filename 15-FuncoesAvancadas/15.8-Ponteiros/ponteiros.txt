@@ -1,0 +1,25 @@
+FUNÇÕES COM PONTEIROS:
+
+Em funções que recebem (parâmetros) e retornam tipos de dados "normais", nós
+passamos esses valores por cópia. É como se a função inicializasse uma variável
+temporária que tenha o valor passado no parâmetro.
+
+Quando uma função recebe ou retorna um ponteiro, ela está trabalhando com o endereço
+da variável na memória. Então, quando desreferenciamos o ponteiro que recebemos, podemos
+alterar o valor contido nesse endereço. Isso altera o valor "original" da váriavel,
+independente de seu escopo.
+
+Obs.: Usamos o e-comercial (&nomeVar) quando estamos passando o ponteiro (endereço de memória)
+como parâmetro, porque a variável iria passar seu valor, mas com o **&** ela passa seu endereço.
+
+Obs.: Se as funções com ponteiro servirem apenas para alterar seu valor, não precisa de retorno.
+
+// Exemplo
+func nomeFunc(nomePtr *tipoDado) {
+
+}
+
+func main() {
+    var nomeVar tipoDado
+    nomeFunc(&nomeVar)
+}

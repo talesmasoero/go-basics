@@ -1,0 +1,40 @@
+FUNÇÕES:
+
+Funções também são uma "variável" em Go. São blocos de código que podem
+ou não receber parâmetros ou retornar algo.
+
+Em Go, o as funções retornam (0, n) tipo de dados (podem ter mais de 1 retorno).
+
+
+DECLARAÇÃO DE FUNÇÕES:
+
+// Criando uma função
+func nomeFunc(parâmetros) retorno {}
+
+// Atribuindo uma função a uma variável
+// nomeVar vai ser uma variável do tipo func(param) retor
+var nomeVar = func(param) retor {}
+
+// nomeVar é o valor retornado pela função
+nomeVar := nomeFunc(param)
+
+
+Obs.: caso uma função retorne mais de um valor e você quer ignora-lo,
+basta usar um underline "_" no retorno desejado. Porque, em Go,
+não podemos declarar variáveis e não usa-las.
+
+Ex.: _, nomeVar2 := nomeFunc(param)
+
+
+OBS.: Funções podem receber e retornar funções.
+
+
+ASSINATURA DE FUNÇÕES:
+
+Uma assinatura de função (function signature) é o que "identifica" a função.
+Ela é composta pelo seu nome, seus parâmetros e seu retorno.
+
+Obs.: É "utilizada" com interfaces. Não é obrigatório usar os nomes dos parâmetros/retorno.
+
+Ex.: func nomeFunc(nomeParametro tipoDado) tipoRetorno {}
+Assinaturas: nomeFunc(nomeParametro tipoDado) tipoRetorno / nomeFunc(tipoDado) tipoRetorno

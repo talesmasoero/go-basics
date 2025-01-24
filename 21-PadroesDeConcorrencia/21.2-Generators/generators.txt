@@ -1,0 +1,10 @@
+GENERATORS:
+
+O padrão Generator é uma função que encapsula a chamada de uma
+goroutine e retorna um canal.
+
+Se a função tiver apenas uma goroutine e retornar o canal, ela irá 
+retornar o canal sempre que um dado for enviado para ele na goroutine.
+
+Basicamente, em vez de criar uma função e chamar ela numa goroutine,
+nós criamos uma goroutine dentro da função e chamamos ela normalmente.

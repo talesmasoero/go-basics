@@ -1,0 +1,4 @@
+mode: set
+subtest/forma/forma.go:22.34,24.2 1 1
+subtest/forma/forma.go:26.33,28.2 1 1
+subtest/forma/forma.go:30.31,32.2 1 1

@@ -1,0 +1,39 @@
+SWITCH:
+
+Switch Case é uma estrutura de controle similiar ao If/Else, onde você
+pode comparar apenas o valor de uma variável (usando ela como parâmetro
+no switch), ou inúmeras condições (sem parâmetros).
+
+No switch, há cases com condições (similar ao else if), e o default sem nenhuma
+condição (similar ao else), ele só será executado caso nenhum case seja verdadeiro.
+
+E em Go, o uso da palavra break não é obrigatório, porque, ao encontrar uma condição
+verdadeira, o programa saí do bloco do switch.
+
+Caso você use a palavra fallthrough, você irá jogar a execução do programa dentro
+do próximo case, mesmo que a condição não seja atendida.
+
+// fallthrough é uma palavra reservada que, mesmo que um caso verdadeiro seja
+// encontrado, o programa irá cair (fallthrough) dentro do código da próxima condição
+
+Obs.: Não é possível fazer comparações quando o switch tem um parâmetro, apenas botar
+valores que serão comparados com ele (parâmetro == valor).
+
+// Exemplo com parâmetro
+switch int {
+    case 1:
+        //
+    case 25:
+        //
+}
+
+// Exemplo sem parâmetro
+switch {
+    case a == b:
+        //
+    case x > y && y < z:
+        //
+}
+
+
+OBS.: Não é obrigatório o uso do default.

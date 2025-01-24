@@ -1,0 +1,18 @@
+FUNÇÕES VARIÁTICAS:
+
+Funções variáticas (que o tamnho varia) conseguem receber de
+zero a n (0, n) parâmetros de um mesmo tipo. Para usar essa função,
+basta utilizar três pontos antes do tipo desejado (**...tipoDado**).
+
+As únicas limitações delas são que, só pode haver um parâmetro variático e
+ele tem que ser o último parâmetro.
+
+Obs.: Os parâmetros recebidos são armazenados como slice no nome escolhido
+para a variável.
+
+// Essa função pode receber inúmeros parâmetros de tipoDado2 porque
+// atende todas as regras e nomeVar é tratado como um slice
+func nomeFunc(nomeVar tipoDado1, nomeVar ...tipoDado2) {}
+
+// Não funciona
+func nomeFunc(nomeVar ...tipoDado2, nomeVar tipoDado1) {}

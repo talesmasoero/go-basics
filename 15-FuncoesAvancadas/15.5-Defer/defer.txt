@@ -1,0 +1,24 @@
+DEFER:
+
+Defer (adiar) é uma "cláusula" usada antes da linha de código faz com que
+essa linha seja executada imediantamente antes do retorno/final da função.
+Seja essa função a main ou uma qualquer.
+
+Obs.: Defer é muito usado para fechar conexões com banco de dados, arquivos...
+
+// Adia a execução do primeiro print para o final da função
+func main() {
+    defer fmt.Print("World!")
+    fmt.Print("Hello, ")
+}
+
+// É como se isso acontecesse, a linha que tem defer é executada no
+// final da função
+func main() {
+    fmt.Print("Hello, ")
+    fmt.Print("World!")
+}
+
+OBS.: O defer funciona no "modo" LIFO (Last In, First Out), em outras
+palavras, a última linha que tiver defer será a primera a ser executada.
+Funciona como uma pilha.

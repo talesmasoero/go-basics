@@ -1,0 +1,5 @@
+MULTIPLAXADOR:
+
+Basicamente, o padrão Multiplexador serve para unir N canais em um só.
+Teremos N canais e, de algum modo – geralmente usando o select –,
+receberemos os dados desses canais e os enviaremos para um canal de saída.

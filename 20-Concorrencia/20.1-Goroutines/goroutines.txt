@@ -1,0 +1,45 @@
+GOROUTINES:
+
+Paralelismo: é o que acontece quando duas ou mais tarefas são executadas
+ao mesmo tempo, simultaneamente, em diferentes núcleos do processador
+(é impossível ter tarefas simultâneas em um único núcleo).
+
+Concorrência: é a capacidade de lidar com várias tarefas ao mesmo tempo,
+alternando a execução entre elas, mas sem, necessariamente, executar todas
+ao mesmo tempo. A concorrência pode acontecer em um único núcleo.
+
+Goroutines fazem com que funções ou métodos possam ser executados de forma
+concorrente com o programa principal (ou outras funções).
+
+Nós não criamos funções nem métodos concorrentes, para implementar a
+concorrência/goroutine numa função, basta usar a cláusula **go**
+antes da chamada da função.
+
+Obs.: As goroutines são "ignoradas" até o programa "normal" começar a executar,
+então as goroutines começam a executar concorrentemente.
+
+Obs.: Pode-se dizer que goroutines são funções/blocos de código que executam de
+forma concorrente.
+
+
+// EXEMPLOS
+
+// Função normal
+go nomeFunc() {}
+
+// Função anônima
+go func() {}()
+
+
+Obs.: Para alterar o número de núcleos/processadores disponíveis, usamos
+a função runtime.GOMAXPROCS() (do pacote runtime).
+
+OBS.: Nada acontece quando só há goroutines, porque o Go entende que pode
+continuar a execução do programa e ir alternando com a goroutine. Assim a
+execução chega na última linha da **main()** sem fazer nada.
+
+/*
+Via de regra, as goroutines acabam sendo mais úteis quando você quer processar de
+forma concorrente coisas que estão fora da sua máquina. Por exemplo, uma série
+de consultas diferentes em um banco de dados ou uma série de requisições http.
+*/

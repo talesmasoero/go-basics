@@ -1,0 +1,25 @@
+APLICAÇÕES DE LINHA DE COMANDO (CLIs):
+
+Command-Line Interfaces (CLIs) são aplicações quaisquer que podem ser
+executadas por linha de comando.
+
+É uma interface que o usuário interage por meio de comandos digitados
+em um terminal ou console (não há uma interface gráfica).
+
+A estrutura de um CLI geralmente é composta pelo nome do arquivo, nome do
+comando e as flags (parâmetros).
+
+Flags podem ser curtas ou longas, sendo, respectivamente, acompanhadas
+de um hífen e dois hífens (-flagCurta --flagLonga).
+
+Obs.: CLIs são muito usadas para automatizações, scripts, etc.
+
+// Exemplos de comandos usados para executar uma CLI
+
+// Com o go build nomeArquivo
+./nomeArquivo nomeComando -flagCurta valorFlagCurta --flagLonga valorFlagLonga
+
+// Sem o go build nomeArquivo
+go run main.go nomeComando -flag valorFlag
+
+OBS.: CLIs podem ter uma cadeia de comandos e subcomandos.

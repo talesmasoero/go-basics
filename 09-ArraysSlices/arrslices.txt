@@ -1,0 +1,59 @@
+ARRAYS E SLICES:
+
+Arrays são listas de elementos de um mesmo tipo. Podendo ser, também,
+de tipos personalizados.
+
+Os arrays tem tamanho fixo, não é possível altera-lo.
+
+Cada elemento do array tem um índice específico para acessa-lo.
+O primeiro elemento tem o índice 0, então o último elemento tem
+o índice sendo o tamanho do array menos um (len(arr) - 1).
+
+Slices são, de grosso modo, arrays flexíveis, onde o tamanho pode
+ser alterado.
+
+
+DECLARANDO ARRAYS:
+
+// Arrays declarados com o valor default do tipo do dado
+var nomeArray [tamanhoArray]tipoDado
+
+// Pode preencher o array com os valores (dentro das chaves)
+nomeArray := [tamanhoArray]tipoDado{}
+
+// Os 3 pontos fazem com que o array seja criado de acordo com a
+// quantidade de elementos nas chaves (nesse caso, 5)
+nomeArray := [...]tipoDado{dado1, dado2, dado3, dado4, dado5}
+
+
+SLICES:
+
+Slices funcionam como um ponteiro que aponta/referencia um array,
+por isso o nome slice (fatia de um array).
+
+Slices sempre referenciam arrays, se um for criado a partir do "nada",
+ele estará referenciado um array interno.
+
+A função append() adiciona elementos no slice.
+Ex.: nomeSlice = append(nomeSlice, elemento)
+     nomeSlice = append(nomeSlice, arraySlice[i1:i2]...)
+
+Obs.: Se um slice for declarado como uma parte de um array e essas
+posições forem alteradas posteriormente no array, o slice também
+será alterado.
+
+
+DECLARANDO SLICES:
+
+// Slices são declarados com os colchetes vazios
+var nomeSlice []tipoDado
+
+nomeSlice := []tipoDado{}
+
+// Cria um slice a partir dos índices de um array
+// Não preencher o primeiro índice é pegar do início até o segundo
+// índice, e não preencher o segundo índice é ir do primeiro índice
+// até o último
+// O primeiro índice é inclusivo e o segundo exclusivo (vai até o índice anterior)
+nomeSlice := nomeArray[i1:i2]
+

@@ -1,0 +1,12 @@
+WORKER POOLS:
+
+Padrões de concorrência são "designs", formas de organizar o código, que
+facilitam o trabalho com tarefas, geralmente executadas de forma concorrente, 
+melhorando a eficiência e o controle sobre o uso de recursos do sistema.
+
+O padrão **Worker Pools** utiliza um conjunto de "trabalhadores" (goroutines)
+para processar tarefas retiradas de uma "fila" (canal). A fila é onde as tarefas
+são colocadas, e os trabalhadores retiram as tarefas à medida que ficam disponíveis.
+
+Obs.: Cada worker (trabalhador) é uma goroutine, e uma pool (piscina) é um
+conjunto de trabalhadores que são reutilizados para processar múltiplas tarefas.

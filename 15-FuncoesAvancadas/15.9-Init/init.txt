@@ -1,0 +1,7 @@
+FUNÇÃO INIT:
+
+É a primeira função a ser executada no programa, inclusive antes da main().
+
+Geralmente é usada para fazer algum tipo de "setup" em variáveis globais.
+
+Obs.: Todo arquivo pode ter uma função init.

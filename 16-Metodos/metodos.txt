@@ -1,0 +1,11 @@
+MÉTODOS:
+
+Métodos são funções que só podem ser usadas por um tipo/estrutura de dado
+predeterminado na sua criação. Para determinar o tipo de dado, adicionamos
+um nome (alias/apelido) e seu tipo de dado entre parênteses (entre func e
+o nome da função).
+
+É possível encadear métodos (nomeVar.Metodo1().Metodo2()), mas, para isso, é
+necessário que os métodos retornem o tipo correto, mesmo que utilize ponteiros.
+
+Obs.:  Os tipos/estruturas de dados também podem ser personalizados ou ponteiros.

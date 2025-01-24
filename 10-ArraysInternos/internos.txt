@@ -1,0 +1,29 @@
+ARRAYS INTERNOS:
+
+Um array interno explica como funciona o funcionamento dos slices.
+Utilizando a função make(), podemos criar slices com o tamanho e
+a capacidade do slice.
+
+O Go cria um array com a capacidade determinada e faz com que o slice
+aponte para uma parte (ou todo) esse array. Assim o tamanho do slice pode
+ser no máximo igual o do array interno, caso ele ultrapasse, o Go cria outro
+array interno com capacidade dobrada.
+
+Ex.: make([]int, 10, 15) - len(10), cap(15), caso ultrapasse: len(16) cap(30) 
+
+
+FUNÇÃO MAKE():
+
+// Criados no valor default de cada tipo
+make(tipoDado, capacidade)
+
+O tipoDado pode ser slices, maps ou channels:
+
+s := make([]int, 5) // Slice com comprimento 5 e capacidade 5
+s2 := make([]int, 5, 10) // Slice com comprimento 5 e capacidade 10
+
+m := make(map[string]int) // Map sem capacidade inicial específica
+m2 := make(map[string]int, 10) // Map com capacidade inicial de 10
+
+c := make(chan int) // Canal sem buffer (buffer size = 0)
+c2 := make(chan int, 10) // Canal com buffer de tamanho 10

@@ -1,0 +1,37 @@
+HERANÇA:
+
+Em Go não há herança propriamente dita, por isso usamos a composição.
+Ela funciona como uma herança e permite maior flexibilidade e entendimento,
+sendo mais usada atualmente.
+
+O objeitvo da composição é fazer com que structs mais nichadas tenham
+acesso a campos de structs mais abrangentes. Por exemplo, um falcão
+é uma ave, mas nem toda ave é um falcão.
+
+Em vez de passar uma struct como um campo normal em outra struct, nós
+passamos como campo anônimo para "facilitar" o acesso.
+
+
+FAZENDO A COMPOSIÇÃO:
+
+type nomeStruct1 struct {
+    nomeCampo1 tipoDado
+}
+
+// Com campo anônimo (nomeStruct1)
+type nomeStruct2 struct {
+    nomeCampo2 tipoDado
+    nomeStruct1
+}
+
+var s2 nomeStruct2
+s2.nomeCampo1 = dado
+
+// Sem campo anônimo
+type nomeStruct2 struct {
+    nomeCampo2 tipoDado
+    nomeStruct1 nomeStruct1
+}
+
+var s2 nomeStruct2
+s2.nomeStruct1.nomeCampo1 = dado

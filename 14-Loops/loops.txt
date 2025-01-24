@@ -1,0 +1,69 @@
+LOOPS:
+
+Como Go é uma linguagem simples, só há um "comando" para fazer loops,
+o for. Ele pode ser usado de diversas maneiras para percorrer arrays,
+slices, maps, valores. O loop também pode ser infinito.
+
+Além do for "normal" temos o for range, ele é usado quando vamos percorrer
+a lista/map por completo. Os outros fors conseguem ser usados para percorrer
+as listas de forma mais rápida. Se ela estiver ordenada, da para procurar
+um valor começando pelo meio da lista.
+
+Há diversas estruturas possíveis para os loops, porque, apenas com o for,
+conseguimos "recriar" todos os tipos de loops de outras linguagens.
+Ex.: while, do while, for in...
+
+Obs.: É possível ter loops dentro de loops.
+
+
+FOR:
+
+// Loop padrão, onde i representa o índice de cada elemento do array.
+// Então, i começa no índice inicial (0) e, enquanto i for menor do que
+// o tamnho do array (i < len(array)), i será acrescido em 1 (i++)
+for i := 0; i < len(array); i++ {
+
+}
+
+// Loop infinito, geralmente tem um break
+for {
+    if condição {
+        break
+    }
+}
+
+// Loop "contador", enquanto a variável não atender a condição de parada.
+// Geralmente o valor da variável é alterado a cada iteração
+for i < maxInt {
+
+}
+
+Obs.: É possível declarar mais de uma variável em um loop, botar inúmeras
+condições de paradas e trabalhar com o índice como quiser (de traz pra frente,
+pulando muitos números...).
+
+
+FOR RANGE:
+
+// A primeira variável representa o índice e a segunda, o valor contido no índice
+for índice, valor := range slice {
+
+}
+
+// Com os maps é a mesma coisa, mas o "índice" do map é a chave
+for chave, valor := range map {
+
+}
+
+// É possível iterar sobre um inteiro (versão 1.22)
+for índice := range n {
+    // índice vai de 0 até n - 1
+}
+
+Obs.: A iteração em maps é em ordem aleatória.
+
+Obs.: É possível ignorar o índice ou o valor usando o underline **_**.
+
+Obs.: É possível iterar sobre diversas estruturas de dados, inclusive strings.
+Onde o "valor" de cada caractere de uma string é dado em rune (int32). Lembrando
+que runes podem ser representar pelo caractere entre aspas simples **'r'**.

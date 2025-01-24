@@ -1,0 +1,63 @@
+"TIPOS" GENÉRICOS:
+
+Generics são uma forma de escrever códigos que trabalham com mais de
+um tipo de dado. Usamos uma váriavel (geralmente T) para representar mais
+de um tipo.
+
+Assim, usar generics (tipos genéricos) reduz a duplicação de código para tipos
+diferentes. Por exemplo numa função para achar o maior número, com generics é possível
+criar apenas uma única função para uint, int, float...
+
+Para criar tipos genéricos (geralmente em funções, mas podemos usar em structs), usamos
+colchecetes com o tipo genérico (ou mais) depois do nome da variável. O tipo genérico
+entre colchetes funciona como um parâmetro **nomeVar tipoDado** e, geralmente, o nome
+usado é apenas T (convenção).
+
+Para passar quais tipos um genérico pode assumir usamos o operador
+bitwise (bit a bit) do OR (OU), usando apenas uma barra **|** e passando
+os tipos de dados entre elas. Ex.: int | float64 | string.
+
+Podemos passar um tipo personalizado como genérico, para isso podemos
+usar um til antes do "tipo original" (~tipoOriginal) ou passar o novo
+tipo como genérico.
+
+// Exemplo
+// tipoDado = tipoOriginal (int, float, string...)
+type nomeTipo tipoDado
+
+func nomeFunc[T ~tipoDado] () {}
+// ou
+func nomeFunc[T nomeTipo | tipoDado] () {}
+
+Obs.: Geralmente passamos os tipos genéricos dentro de uma interface para
+melhorar a legibilidade.
+
+
+USANDO TIPOS GENÉRICOS:
+
+// Funções
+type Number interface { int | float64 }
+func nomeFunc[T Number] (p1, p2 T) {}
+
+func nomeFunc[T int | float64] (p1, p2 T) {}
+
+// Structs
+type nomeStruct[T tipoDado | tipoDado] {
+    Campo T
+}
+
+
+OBS.: Não é possível fazer com que uma variável represente variáveis de tipos
+diferentes ao mesmo tempo, por exemplo:
+
+type tipoDado interface { int | string }
+
+func nomeFunc[T tipoDado] (p1, p2 T) {}
+
+// Isso é possível
+nomeFunc("string", "string") {}
+nomeFunc(0, 0) {}
+
+// Isso não é possível
+nomeFunc("string", 0)
+nomeFunc(0, "string")

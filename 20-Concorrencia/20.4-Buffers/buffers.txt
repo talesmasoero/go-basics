@@ -1,0 +1,29 @@
+CHANNELS COM BUFFER:
+
+São canais onde, além do **chan tipoDado**, nós definimos uma capacidade
+**ch := make(chan T, n)**, onde *n* é um inteiro que representa até quantos
+elementos o canal pode receber antes de "travar".
+
+No contexto dos canais, o buffer é esse espaço de armazenamento (temporário),
+onde o canal pode receber *n* elementos antes dele enviar/ler esses dados.
+
+Obs.: O buffer não é a capacidade, mas o espaço de armazenamento que tem essa
+capacidade.
+
+Em canais sem buffer, quando ele recebe um valor, o código é travado até esse
+valor ser recebido em outro local no código. Mas, com buffer, podemos receber
+até *n* valores definidos no código.
+
+Caso a capacidade do buffer seja ultrapassada, o comportamento do canal irá
+passar a ser síncrono (canal sem buffer) até ele volte a operar dentro de
+sua capacidade definida.
+
+
+INICIALIZANDO UM CANAL COM BUFFER:
+
+// O buffer tem a capacidade de n
+// n é um inteiro
+ch := make(chan tipoDado, n)
+
+
+OBS.: Canais com buffers conseguem se comunicar a mesma função/goroutine.

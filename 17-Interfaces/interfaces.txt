@@ -1,0 +1,35 @@
+INTERFACES:
+
+Uma interface define um conjunto de métodos, e qualquer tipo que implemente
+esses métodos pode ser tratado como uma instância dessa interface (polimorfismo).
+Para a interface definir seus métodos, nós usamos a assinatura do método/função.
+
+Interface é, de grosso modo, um tipo que permite outros tipos (geralmente structs) serem
+tratados como o tipo da interface.
+
+Quando um tipo implementa uma interface, a interface também pode implementar
+os métodos desse tipo.
+
+Obs.: Em Go, as interfaces são satisfeitas implicitamente. Um tipo
+implementa uma interface simplesmente por ter os métodos corretos,
+sem precisar declarar que está implementando a interface.
+
+Obs.: Interfaces são muito usadas quando precisamos de mais flexibilidade entre tipos.
+
+// ChatGPT
+// Uma interface é como um contrato: ela define um conjunto de regras (métodos)
+// que um tipo deve seguir para ser considerado compatível com essa interface.
+
+
+DECLARANDO INTERFACES:
+
+// Interface comum
+type nomeInterface interface {
+    // Assinatura (identificador) do método
+    nomeMetodo(parametros) retorno
+    ...
+}
+
+OBS.: Não é mais necessário criar interfaces vazias (que são atendidas/satisfeitas
+por qualquer tipo), atualmente há tipos genéricos em Go (Go Generics).
+

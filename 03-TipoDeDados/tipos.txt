@@ -1,0 +1,91 @@
+INTEIRO:
+
+Números inteiros (positivos e negativos) (int, int8, int16, int32, int64), onde
+o número ao lado é a quantidade de bits que o inteiro pode ter (1111 1111)bin,
+(FF)hexa, (255)dec...
+
+Obs.: ao declarar "var nomeVar int", o inteiro é definido pela arquitetura do
+sistema operacional (x32, x64).
+
+Existem os inteiros (positivos) (uint, uint8, uint16, uint32, uint64).
+
+// Default = 0
+var nomeVar int
+
+
+FLOAT:
+
+Números com casa decimal (float32, float64), onde se usa ponto "." em
+vez de vírgula ",".
+
+// Default = 0.0
+var nomeVar float64
+
+
+RUNE e BYTE:
+
+São alias (apelidos) para int32 e int8, respectivamente.
+rune = int32    // geralmente usado para representar caracteres
+byte = int8     // 1 byte equivale a 8 bits
+
+// Defaults = 0, 0
+var nomeVar rune
+var nomeVar byte
+
+Obs.: Runes pode ser acessadas entre aspas simples, usando apenas
+um caracter **'r'**, isso "retorna" seu código da tabela ASCII (int32)
+
+Obs.: Slices de bytes são muito usados para strings também!
+
+
+STRING:
+
+É uma cadeia de caracteres (""), onde é possível iterar com um loop.
+
+// i -> index (posição do caracter na string)
+// str[i] -> rune (int32) (id do caracter na tabela ASCII)
+// string(str[i]) -> string (o caracter em si)
+for i := 0; i < len(str); i++ {}
+
+// Default = ""
+var nomeVar string
+
+
+BOLEANO:
+
+Boleanos assumem valores de verdadeiro (1) ou falso (0).
+
+Expressões também resultam em bool (Ex.: A && B; A == B).
+
+// Default = false
+var nomeVar bool
+
+
+ERRO:
+
+Erro é um tipo especial muito usado em comparações. Há algumas maneiras
+de atribuir valor a um erro: errors.New() e fmt.Errorf().
+
+Ex.: "if err != nil {}" (se o erro existir, for diferente de nulo)
+
+// Default = nil
+var nomeVar error
+
+
+OBS.: Não se pode fazer operações com tipos diferentes. (int + int8; float32 + float64)
+
+// Tinha feito essa observação:
+// OBS.: As estruturas: maps, slices, channels e pointers, passam/recebem valores por
+// referência (ponteiros - endereço de memória), já: arrays, structs e os tipos
+// báscios passam por valor (cópia). De grosso modo, isso significa que, o escopo das
+// funções "não importam" para as estruturas que passam por referência.
+// Mas o ChatGTP disse que estava meio certo e mudou para essas:
+
+OBS.: As estruturas como **maps**, **slices**, **channels** e **pointers** passam e recebem
+valores por referência, ou seja, carregam um ponteiro para o endereço de memória onde
+os dados reais estão armazenados. Isso significa que modificações feitas dentro de uma
+função, mesmo que estejam em outro escopo, afetam o dado original.
+
+OBS.: Já **arrays**, **structs** e os **tipos básicos** passam seus valores por cópia. Isso
+significa que, ao serem passados para uma função, uma cópia do dado original é feita. Assim,
+qualquer modificação dentro do escopo da função não afeta o valor original fora da função.

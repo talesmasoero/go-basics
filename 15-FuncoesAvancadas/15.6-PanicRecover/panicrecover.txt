@@ -1,0 +1,58 @@
+PANIC:
+
+É uma função que interrompe o fluxo normal do programa, fazendo que
+a execução pare, retornando seu parâmetro no terminal. Panic "mata"
+a execução do programa.
+
+Quando um panic está prestes a ser executado, ele executa todas as
+linhas/funções que tem defer (o defer precisa ser declarado antes
+do panic). Assim, é possível tentar recuperar a execução com o recover.
+
+Obs.: O panic mata a execução da função independente do recover.
+
+
+RECOVER:
+
+Essa função "captura" uma função panic executada e retorna o parâmetro da
+panic, permitindo que o programa continue seguindo seu fluxo normalmente.
+
+Se o panic for na main, é impossível continuar com a execução do programa,
+o recover só funciona se o panic for executado numa função à parte. Porque,
+com o recover, o panic mata apenas a execução da função. Fazendo o programa
+continuar de onde a função foi chamada.
+
+Obs.: Geralmente usamos com if init.
+
+
+OBS.: Ambas as funções são utilizadas quando há defer.
+
+
+
+// Chat GPT
+PANIC:
+
+É uma função que interrompe o fluxo normal do programa, fazendo com que a execução
+pare e retorne seu argumento através do desenrolar da pilha, podendo ser exibido
+no terminal ou tratado pelo recover. panic "mata" a execução do programa se não
+for capturado por um recover. Quando um panic é chamado, todas as funções deferidas
+na pilha de chamadas serão executadas, independentemente de onde estejam, antes que
+o programa termine. Assim, é possível tentar recuperar a execução com o recover
+dentro dessas funções deferidas.
+
+Obs.: Se não houver recover, o panic mata a execução do programa. Se houver, ele pode
+impedir o término completo do programa, dependendo de onde está o recover.
+
+
+RECOVER:
+
+Essa função "captura" um panic que está em processo de execução e retorna o valor passado ao panic.
+Quando o recover é chamado corretamente, ele impede que o programa termine abruptamente, permitindo
+que o fluxo do programa continue normalmente a partir do ponto onde a função deferida foi chamada.
+Se o panic for na função main e não houver recover, o programa termina. O recover só funciona se
+for chamado em uma função deferida. Ele captura o panic, evitando que o erro propague para a função
+que chamou a função deferida.
+
+Obs.: Geralmente, usamos recover com uma verificação condicional (ex.: if r := recover(); r != nil) em funções deferidas.
+
+Observação final:
+Ambas as funções (panic e recover) são utilizadas em conjunto com defer para garantir que o recover possa capturar o panic.

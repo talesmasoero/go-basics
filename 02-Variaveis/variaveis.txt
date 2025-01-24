@@ -1,0 +1,48 @@
+GOLANG:
+
+Go é uma linguagem fortemente tipada, isso significa que toda
+variável tem, obrigatoriamente, algum tipo.
+
+Não é possível compilar um programa com uma variável que foi
+declarada mas não foi usada.
+
+
+VARIÁVEIS:
+
+Variáveis são "nomes" dados a algum tipo de dado (int, string...) e
+armazenam algum valor que pode ser alterado. Também há constantes,
+onde o valor não pode ser alterado.
+
+Ao serem declaradas sem valor, o valor vai para o "nulo" do
+tipo do dado (int, float = 0, string = "", bool = false...).
+
+Obs.: Podem fazer uma troca de valores sem a necessidade de uma
+terceira variável.
+Ex.: varA, varB = varB, varA
+
+
+DECLARAÇÃO DE VARIÁVEIS:
+
+// Inicializa uma variável no valor padrão (0, "", nil)
+var nomeVar tipoDado
+var nomeVar1, nomeVar2... tipoDado
+
+// Inicializa uma variável com valorDado e seu tipo é inferido
+nomeVar := valorDado
+nomeVar1, nomeVar2... := valorDado1, valorDado2...
+
+// Declaração de múltiplas variáveis
+var (
+    nomeVar tipoDado
+    ...
+)
+
+// Obs.: constantes precisam ser inicializadas com algum valor
+// porque não pode ser alterado
+const nomeConst tipoDado = valorDado
+
+// Declaração de múltiplas constantes
+const (
+    nomeConst tipoDado = valorDado
+    ...
+)

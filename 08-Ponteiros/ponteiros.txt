@@ -1,0 +1,34 @@
+PONTEIROS:
+
+Ponteiros são variáveis que referenciam (apontam para) o endereço de
+memória de alguma variável. Então se o valor contido no endereço que
+o ponteiro referencia for alterado, o valor da variável "original"
+(referenciada) também vai ser alterado e vice-versa.
+
+Quando eu crio um variável qualquer, ela automaticamente tem um endereço
+associado a ela na memória. Ao criar um ponteiro do mesmo tipo que essa
+variável, eu posso "ligar" (referenciar) eles, falando que o ponteiro recebe
+o endereço da variável, usando o E-Comercial "&" (ptr = &var). Por isso, ao
+alterar o valor contido no endereço que o ponteiro referencia (*ptr), o valor
+da variável também é alterado.
+
+
+DECLARAÇÃO DE PONTEIROS:
+
+// Default = nil
+var nomePtr *tipoDado
+
+
+REFERENCIANDO PONTEIROS:
+
+var nomeVar int
+nomePtr := &nomeVar
+
+
+DESREFERENCIANDO PONTEIROS:
+
+A desreferenciação é usada para pegar o valor contido no endereço do
+ponteiro. Para isso usamos o asterísco "*".
+
+// Printa o valor contido no endereço referenciado por nomePtr
+fmt.Println(*nomePtr)

@@ -1,0 +1,45 @@
+SELECT:
+
+O select é extremamente parecido com o switch case, porém nós não
+podemos selecionar uma variável como no switch.
+
+Em vez de trabalhar com valores/booleanos, os cases do select verificam
+se há algum valor num canal e se ele está aberto, há quanto tempo os
+canais estão esperando algum valor ou enviam um valor para um canal.
+
+Obs.: Um valor só pode ser enviado para um canal, caso esse canal esteja
+enviando esse valor (quando o canal é "lido") em outra goroutine.
+
+Ele é utilizado para sincronizar múltiplas goroutines e channels,
+travando a execução do código até que um dos casos seja realizado.
+
+Obs.: Para verificar o tempo, ou quebrar o select após um certo tempo,
+usamos a função time.After(). Ex.: **case <-time.After(time.Second):**
+
+OBS.: Se mais de uma condição for atendida, o select ira executa-las
+em ordem aleatória.
+
+// EXEMPLO
+
+// Não há uma variável/canal selecionados no select
+select {
+// Verifica se há algum valor no canal
+case nomeVar := <-ch1:
+    // ...
+// Verifica se o canal está aberto
+case _, ok := <-ch2:
+    if !ok {
+        // ...
+    }
+    // ...
+// Envia valor para o ch3 quando o canal estiver pronto para
+// receber em outra goroutine
+case ch3 <- valor:
+    // ...
+// Caso X milisegundos tenham passado desde o início do select
+case <-time.After(time.Millisecond * X):
+    // ...
+// Caso nenhum dos casos tenham sido atendidos
+default:
+    // ...
+}

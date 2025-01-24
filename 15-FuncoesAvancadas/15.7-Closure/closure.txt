@@ -1,0 +1,37 @@
+CLOSURE:
+
+"Função Closure" está relacionada a funções dentro de funções. Onde a closure
+é uma função criada dentro de outra. Então ela "se lembra" das condições em que
+foi criada, por causa dos escopos.
+
+Tudo que está dentro de uma função faz parte de seu escopo, incluindo outra
+função. No caso da closure, ela também tem acesso as variáveis declaradas fora
+do seu escopo.
+
+Se eu criar uma função, declarar um inteiro e retornar outra função que incrementa
+o inteiro, a função retornada não terá acesso a declaração do inteiro, então seu
+valor irá crescer (não irá voltar para o default).
+
+// Exemplo
+
+func sequencia() func() int {
+    i := 0
+    return func() int {
+        i++
+      return i  
+    }
+}
+ 
+func main(){
+    proximoNumero1 := sequencia()
+    proximoNumero2 := sequencia()
+
+    fmt.Println(proximoNumero1()) // 1
+    fmt.Println(proximoNumero1()) // 2
+    fmt.Println(proximoNumero1()) // 3
+
+    fmt.Println("-----------------")
+
+    fmt.Println(proximoNumero2()) // 1
+    fmt.Println(proximoNumero2()) // 2
+}

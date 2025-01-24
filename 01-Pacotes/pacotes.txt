@@ -1,0 +1,52 @@
+PACOTES:
+
+No Go, sempre precisamos de um pacote principal (package main) e uma
+função main (func main()).
+
+Num diretório (pasta) só pode haver 1 tipo de pacote, que geralmente
+é nomeado com o nome do diretório.
+
+Para "interagirmos" pacotes diferentes, precisamos de um módulo (go.mod)
+que gerencia os pacotes/dependências.
+
+E para chamar as funções/variáveis de um outro pacote/diretório, basta
+importá-lo (import "nomeDoModulo/caminhoParaOPacote(pasta)") e chamar
+as funções usando "nomeDoPacote.Função()".
+
+Obs.: Funções/Variáveis com inicial minúscula podem ser usadas apenas
+no próprio pacote (como se fossem privadas), e com iniciai maiúscula
+podem ser importadas para outro pacote/diretório (como se fossem públicas).
+
+
+PACOTES EXTERNOS:
+
+Para usarmos/instalarmos pacotes externos usamos o comando "go get link", e usamos
+da mesma maneira que os pacotes "normais".
+
+
+IMPORTS:
+
+import "nomeDoModulo/caminhoParaOPacote(pasta)"
+
+// O ponto faz com que se use as funções do pacote sem a necessidade
+// de usar nomeDoPacote.Função(), apenas Função()
+import (
+    . "caminhoParaOPacote"
+)
+
+
+COMANDOS:
+
+// Cria um módulo (go.mod)
+go mod init nomeDoModulo
+Ex.: go mod init pacotes
+
+// Atualiza as dependências do go.mod
+go mod tidy
+
+// Baixa um pacote externo - C:\Users\tales\go\pkg\mod
+go get linkDoRepositorio
+Ex.: go get github.com/badoux/checkmail - C:\Users\tales\go\pkg\mod\github.com
+
+// Atualiza a versão do Go
+go get go@latest

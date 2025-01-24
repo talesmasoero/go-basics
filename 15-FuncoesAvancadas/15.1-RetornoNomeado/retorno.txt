@@ -1,0 +1,12 @@
+FUNÇÕES COM RETORNO NOMEADO:
+
+Geralmente, uma função que retorna algo, usa alguma variável instanciada (declarada)
+na própria função ou um parâmetro no retorno (**return nomeVar**).
+
+Com o retorno nomeado, podemos dar nome ao que será retornado na função e deixar o
+retorno vazio (**return**).
+
+Botamos o nome da variável e o tipo dela entre parênteses no campo onde iddentificamos
+o retorno na função (no final da função).
+
+Ex.: func nomeFuncao() (nomeRetorno tipoDado) {}

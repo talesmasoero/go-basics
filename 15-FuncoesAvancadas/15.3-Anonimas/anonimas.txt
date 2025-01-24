@@ -1,0 +1,57 @@
+FUNÇÕES ANÔNIMAS:
+
+São funções passadas dentro de outras funções. A diferença delas é
+que elas não tem um nome de função. As únicas coisas que ela pode ter
+são parâmetros e retorno.
+
+Como uma função anônima não tem nome, não tem como "chamar" ela para ser
+executada. Então usamos parênteses ao final (depois da chave), isso faz
+ela ser executada imediatamente quando o programa a lê.
+
+Se a função receber parâmetros, passamos eles dentro desses últimos parênteses.
+
+Quando a função retorna algo, botamos as variáveis que recebem esse retorno
+com o operador de atribuição (:= / =) antes do func.
+
+
+// Note os parênteses imediatamente após a chave
+func main() {
+    //Função sem parâmetros
+    func () {
+        fmt.Println("Essa é uma função anônima")
+    }()
+
+    // Função com parâmetros
+    nomeVar := func(nomeVar tipoDado) tipoDado {
+        // Alguma lógica
+    }(dado)
+}
+
+
+OBS.: Pode-se dizer que uma função é chamada pelo parênteses, mesmo que ela tenha
+nome, usamos nomeFunc() para chama-la no código. Por exemplo:
+
+func main() {
+    // Essa função atribuí "Hello (parâmetro)" para a variável texto
+    texto := func(str string) string {
+        return "Hello" + str
+    }("World")
+
+    fmt.Println(texto)
+}
+
+Note que a função toda, desde **texto := func...** até **...return "Hello" + str**, é
+a função em si, isso é o "nome" da função. Então, unindo seu nome com os parâmetros,
+você chama a função.
+
+Imagine essa função:
+
+func putsHello(str string) string {
+    return "Hello" + str
+}
+
+Para chama-la na main(), usamos putsHello("World"), é a mesma coisa com:
+
+texto := func(str string) string {
+    return "Hello" + str
+}("World")

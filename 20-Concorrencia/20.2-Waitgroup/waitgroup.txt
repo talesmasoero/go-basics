@@ -1,0 +1,27 @@
+WAITGROUPS:
+
+WaitGroup serve para controlar e sincronizar goroutines, há três
+métodos para isso:
+
+- Add(int): É como um contador que informa ao WaitGroup quantas goroutines
+ele deve esperar;
+
+- Done(): Informa ao WaitGroup que uma das goroutines foi finalizada, como
+se decrementasse a quantidade de goroutines que ele está esperando;
+
+- Wait(): Trava a execução do progroma até que o "contador" seja zerado,
+ou seja, até que todas as goroutines esperadas tenham chamado Done().
+
+// Exemplo
+wg := sync.WaitGroup{}
+wg.Add(1)
+
+go func () {
+    // Código
+    wg.Done()
+}()
+
+// O programa é travado nessa linha até uma goroutine ser finalizada
+wg.Wait()
+
+OBS.: Channels são mais utilizados do que WaitGroups.

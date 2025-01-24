@@ -1,0 +1,10 @@
+FUNÇÕES RECURSIVAS:
+
+É uma função que chama a si mesma dentro do código. Ao chamar a si própria,
+uma função recursiva, cria uma pilha de funções na memória até que a condição
+de parada seja atingida.
+
+É possível que a condição de parada não seja atingida (ou não tenha uma), fazendo
+a memória "estourar" (stack overflow). Por isso loops são mais usados.
+
+Obs.: Sempre defina a condição de parada para funções recursivas.

@@ -1,0 +1,35 @@
+IF ELSE:
+
+Basicamente o if/else é uma estrutura de controle que verifica um booleano.
+Caso a condição seja verdadeira, um bloco de código é executado, caso ela não seja,
+outro bloco de código é executado.
+
+Apenas if e else if tem condições, o else acontece caso nenhuma das condições
+anteriores não tenham sido atendidas.
+
+Os operadores &&, ||, ! (AND, OR, NOT), <, <=, >, >= e == servem para fazer
+comparações e retornam se a operação é verdadeira ou falsa.
+
+Obs.: "Infinitas" operações podem ser inseridas num if/else.
+
+// Se a condição1 for verdadeira, o código1 é executado
+if condição1 {
+    código1
+    // Se a condição2 for verdadeira, o código2 é executado
+} else if condição2 {
+    código2
+    // Se nenhuma das condições forem verdadeiras, o código3 é executado
+} else {
+    código3
+}
+
+
+IF INIT:
+
+É possível inicializar uma variável para ser usada apenas no bloco do if/else,
+por exemplo, usamos **if value, ok := map[key]; ok {}** para verificar se a chave
+existe no map. Se **ok** for true, a chave existe no map e podemos implementar
+alguma lógica.
+
+
+OBS.: Não é obrigatório usar else if nem else/

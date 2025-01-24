@@ -1,0 +1,35 @@
+STRUCTS:
+
+Struct é uma estrutra de dados organizada em campos que contém nome e tipo.
+Ao declarar uma struct, nós criamos um tipo personalizado que "correlaciona"
+os campos dentro dela.
+
+Um exemplo seria uma struct Pessoa com os campos Nome e Idade (string e inteiro).
+Assim, conseguimos fazer uma relação entre dois tipos diferentes de dados.
+
+Para acessar os campos da struct, usamos o nome da struct, um ponto e o nome do
+campo (nomeStruct.nomeCampo).
+
+Obs.: os campos são como variáveis distintas (var nomeVar string / var nomeVar int)
+unidas pelo "novo tipo" (type nomeStruct struct {}).
+
+
+CRIANDO STRUCTS:
+
+type nomeStruct struct {
+    nomeCampo tipoDado
+}
+
+
+DECLARANDO STRUCTS:
+
+// Cria uma variável do tipo "nomeStruct"
+var nomeVar nomeStruct
+
+// Atribuindo valores aos campos de "nomeVar"
+nomeVar := nomeStruct{Campo1: valor, campo2: valor}
+
+Obs.: "nomeVar" é uma instância de "nomeStruct".
+
+
+OBS.: Structs lembram Classes de linguIdadens orientadas a objetos.
