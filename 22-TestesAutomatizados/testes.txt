@@ -1,0 +1,50 @@
+TESTES AUTOMATIZADOS:
+
+Testes automatizados em Golang são, essencialmente, funções que
+testam outras funções. Eles servem para garantir que o programa
+funcione corretamente, mesmo após fazer alterações.
+
+Eles facilitam a manutenção, permitindo modificações no código com
+mais segurança, e "servem" como documentação, mostrando como o
+código deve funcionar.
+
+Assim, caso esteja tudo certo, os testes irão passar e, caso
+tenhamos feito alguma alteração que gere um resultado inesperado,
+os testes irão "avisar".
+
+Dentro de um mesmo diretório só podemos ter um tipo de pacote, certo?
+Mais ou menos, um pacote para testes é a única exceção! (Não é obrigatório
+usar um pacote de testes)
+
+Testes ficam num arquivo separado onde, por convenção, nomeamos com o nome
+do arquivo a ser testado seguido de um "_test.go".
+Ex.: arquivo.go - arquivo_test.go
+
+E, as funções de teste, usam "Test" com o nome orginal da função a ser testada.
+Ex.: Func() - TestFunc()
+
+Obs.: os arquivos de teste não são incluídos na compilação final do programa
+
+
+TESTES UNITÁRIOS: Testam partes isoladas do código, como funções ou métodos;
+
+TESTES DE INTEGRAÇÃO: Testam como diferentes partes do sistema funcionam juntas,
+como a integração de um banco de dados e uma API;
+
+TESTES E2E (End to End): Simulam o comportamento do usuário e verificam o
+sistema como um todo;
+
+
+COMANDOS:
+
+go test ./... => Executa os testes de todos os pacotes do diretório, mostrando se passou ou não;
+
+go test -v => Mostra quais funções estão sendo executadas e se os testes passaram ou não;
+
+go test --cover => Mostra quantos por cento da função está sendo coberta no teste;
+
+go test --coverprofile nomeArquivo.txt => Cria um arquivo .txt que o Go pode ler e oferecer mais informações;
+
+go tool cover --func=nomeArquivo.txt => Mostra quais funções estão sendo testadas e quantos por cento dela o teste está cobrindo (também mostra o total);
+
+go tool cover --html=nomeArquivo.txt => Gera um .html temporário que mostra, exatamente, quais linhas foram cobertas e quais não foram.
